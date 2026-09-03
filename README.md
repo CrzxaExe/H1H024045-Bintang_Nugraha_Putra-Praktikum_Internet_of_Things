@@ -8,3 +8,15 @@ Asprak  : Atik Ahnafi Sulthon
 ```
 
 ![Image](https://zxfile.vercel.app/q/019ee148-ae43-7000-9db3-eecd37e1c0a9?isPublic=true)
+
+## Konten
+
+```
+Root
+└ Pertemuan 1-Sensor Dan Aktuator
+  ├ Code/
+  | └ ... (Source code, asli dan pertanyaan)
+  ├ Dokumentasi/
+  | └ ... (Foto / Video dokumentasi)
+  └ README.md
+```
