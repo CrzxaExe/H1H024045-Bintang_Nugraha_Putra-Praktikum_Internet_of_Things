@@ -7,7 +7,7 @@ void setup()
 {
     Serial.begin(115200);
     dht.begin();
-    Serial.println("Memulai akuisisi data sensor DHT22...");
+    Serial.println("Memulai akuisisi data sensor DHT11...");
 }
 void loop()
 {
@@ -15,7 +15,7 @@ void loop()
     float suhu = dht.readTemperature();
     if (isnan(kelembaban) || isnan(suhu))
     {
-        Serial.println("Gagal membaca data dari sensor DHT22!");
+        Serial.println("Gagal membaca data dari sensor DHT11!");
     }
     else
     {
