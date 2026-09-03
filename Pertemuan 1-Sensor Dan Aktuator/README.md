@@ -1,6 +1,6 @@
 # Modul 1 - Sensor Dan Aktuator
 
-> [!Info]
+> [!IMPORTANT]
 > Memahami, mempelajari dan mengimplementasikan bagaimana akuisisi data dari sensor dan digunakan sebagai acuan kondisi untuk aktuator.
 
 ## Isi Dari README.md Ini
@@ -352,8 +352,8 @@ else
 
 **Percobaan 1A**
 
-![Dokumentasi Percobaan 1A](/Pertemuan%201-Sensor%20Dan%20Akuator/Dokumentasi/Dokumentasi-Percobaan1A.jpg)
+![Dokumentasi Percobaan 1A](/Pertemuan%201-Sensor%20Dan%20Aktuator/Dokumentasi/Dokumentasi-Percobaan1A.jpg)
 
 **Percobaan 2A**
 
-![Dokumentasi Percobaan 2A](/Pertemuan%201-Sensor%20Dan%20Akuator/Dokumentasi/Dokumentasi-Percobaan2A.jpg)
+![Dokumentasi Percobaan 2A](/Pertemuan%201-Sensor%20Dan%20Aktuator/Dokumentasi/Dokumentasi-Percobaan2A.jpg)
