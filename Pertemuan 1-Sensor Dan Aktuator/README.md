@@ -7,7 +7,7 @@
 
 - Library (Yang digunakan)
 - Percobaan (Kode asli, Penjelasannya)
-- Pertanyan Praktikum (Source Code, Penjelasan)
+- Pertanyaan Praktikum (Source Code, Penjelasan)
 - Dokumentasi
 
 ## Library

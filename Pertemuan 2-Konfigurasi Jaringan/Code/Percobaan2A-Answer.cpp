@@ -1,9 +1,9 @@
 #include <ESP8266WiFi.h>
 
-const char *ssid = "personalX";
-const char *password = "177013003";
+const char *ssid = "Your-SSID";
+const char *password = "Your-Password";
 
-const int ledPin = 4; // LED indikator status koneksi
+const int ledPin = 2;
 
 void setup()
 {
@@ -11,10 +11,10 @@ void setup()
     pinMode(ledPin, OUTPUT);
     digitalWrite(ledPin, LOW);
 
-    // Set mode WiFi menjadi Station
     WiFi.mode(WIFI_STA);
     WiFi.begin(ssid, password);
-    WiFi.hostname("Test");
+    WiFi.setHostname("ESP STA");
+    WiFi.setAutoReconnect(true);
 
     Serial.print("Menghubungkan ke WiFi");
     while (WiFi.status() != WL_CONNECTED)
@@ -23,7 +23,6 @@ void setup()
         Serial.print(".");
     }
 
-    // Jika berhasil terhubung
     Serial.println();
     Serial.println("WiFi berhasil terhubung!");
     Serial.print("IP Address  : ");
@@ -33,27 +32,26 @@ void setup()
     Serial.print("RSSI (dBm)  : ");
     Serial.println(WiFi.RSSI());
 
-    digitalWrite(ledPin, HIGH); // nyalakan LED sebagai indikator
+    digitalWrite(ledPin, HIGH);
 }
 
 void loop()
 {
-    // Cek status koneksi setiap 5 detik
     if (WiFi.status() == WL_CONNECTED)
     {
         Serial.println("\nStatus: Terhubung");
-
-        Serial.print("IP Address  : ");
-        Serial.println(WiFi.localIP());
-        Serial.print("MAC Address : ");
-        Serial.println(WiFi.macAddress());
-        Serial.print("RSSI (dBm)  : ");
-        Serial.println(WiFi.RSSI());
     }
     else
     {
         Serial.println("Status: Terputus");
         digitalWrite(ledPin, LOW);
     }
+
+    Serial.print("IP Address  : ");
+    Serial.println(WiFi.localIP());
+    Serial.print("MAC Address : ");
+    Serial.println(WiFi.macAddress());
+    Serial.print("RSSI (dBm)  : ");
+    Serial.println(WiFi.RSSI());
     delay(5000);
 }

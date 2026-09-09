@@ -1,29 +1,59 @@
 #include <ESP8266WiFi.h>
 
-const char *ap_ssid = "ESP32_AccessPointc";
-const char *ap_password = "12345678"; // minimal 8 karakter
+const char *ssid = "personalX";
+const char *password = "177013003";
+
+const int ledPin = 4; // LED indikator status koneksi
 
 void setup()
 {
     Serial.begin(115200);
+    pinMode(ledPin, OUTPUT);
+    digitalWrite(ledPin, LOW);
 
-    // Set mode WiFi menjadi Access Point
-    WiFi.mode(WIFI_AP);
-    WiFi.softAP(ap_ssid, ap_password);
+    // Set mode WiFi menjadi Station
+    WiFi.mode(WIFI_STA);
+    WiFi.begin(ssid, password);
+    WiFi.hostname("Test");
 
-    IPAddress apIP = WiFi.softAPIP();
-    Serial.println("Access Point aktif!");
-    Serial.print("SSID          : ");
-    Serial.println(ap_ssid);
-    Serial.print("IP Address    : ");
-    Serial.println(apIP);
+    Serial.print("Menghubungkan ke WiFi");
+    while (WiFi.status() != WL_CONNECTED)
+    {
+        delay(500);
+        Serial.print(".");
+    }
+
+    // Jika berhasil terhubung
+    Serial.println();
+    Serial.println("WiFi berhasil terhubung!");
+    Serial.print("IP Address  : ");
+    Serial.println(WiFi.localIP());
+    Serial.print("MAC Address : ");
+    Serial.println(WiFi.macAddress());
+    Serial.print("RSSI (dBm)  : ");
+    Serial.println(WiFi.RSSI());
+
+    digitalWrite(ledPin, HIGH); // nyalakan LED sebagai indikator
 }
 
 void loop()
 {
-    // Menampilkan jumlah perangkat yang terhubung setiap 5 detik
-    int jumlahClient = WiFi.softAPgetStationNum();
-    Serial.print("Jumlah perangkat terhubung: ");
-    Serial.println(jumlahClient);
+    // Cek status koneksi setiap 5 detik
+    if (WiFi.status() == WL_CONNECTED)
+    {
+        Serial.println("\nStatus: Terhubung");
+
+        Serial.print("IP Address  : ");
+        Serial.println(WiFi.localIP());
+        Serial.print("MAC Address : ");
+        Serial.println(WiFi.macAddress());
+        Serial.print("RSSI (dBm)  : ");
+        Serial.println(WiFi.RSSI());
+    }
+    else
+    {
+        Serial.println("Status: Terputus");
+        digitalWrite(ledPin, LOW);
+    }
     delay(5000);
 }

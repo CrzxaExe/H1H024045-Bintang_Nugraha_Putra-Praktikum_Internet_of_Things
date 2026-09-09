@@ -13,7 +13,14 @@ Asprak  : Atik Ahnafi Sulthon
 
 ```
 Root
-└ Pertemuan 1-Sensor Dan Aktuator
+├ Pertemuan 1-Sensor Dan Aktuator
+| ├ Code/
+| | └ ... (Source code, asli dan pertanyaan)
+| ├ Dokumentasi/
+| | └ ... (Foto / Video dokumentasi)
+| └ README.md
+|
+└ Pertemuan 2-Konfigurasi Jaringan
   ├ Code/
   | └ ... (Source code, asli dan pertanyaan)
   ├ Dokumentasi/
