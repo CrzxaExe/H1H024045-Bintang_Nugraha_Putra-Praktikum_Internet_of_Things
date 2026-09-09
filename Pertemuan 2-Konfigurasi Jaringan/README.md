@@ -1,6 +1,7 @@
 # Modul 2 - Konfigurasi Jaringan
 
 > [!IMPORTANT]
+> Memahami bagaimana mengkonfigurasikan WiFi ESP sebagai Station(STA), Access Point (AP) atau keduanya STA + AP
 
 ## Isi Dari README.md Ini
 
