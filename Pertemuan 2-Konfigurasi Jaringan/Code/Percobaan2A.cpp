@@ -14,7 +14,7 @@ void setup()
     // Set mode WiFi menjadi Station
     WiFi.mode(WIFI_STA);
     WiFi.begin(ssid, password);
-    WiFi.hostname("Test");
+    WiFi.setHostname("Test");
 
     Serial.print("Menghubungkan ke WiFi");
     while (WiFi.status() != WL_CONNECTED)

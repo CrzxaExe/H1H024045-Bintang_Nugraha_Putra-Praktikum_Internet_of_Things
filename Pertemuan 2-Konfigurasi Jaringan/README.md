@@ -25,8 +25,8 @@ Libary yang diperlukan untuk
 ```cpp
 #include <ESP8266WiFi.h>
 
-const char *ssid = "personalX";
-const char *password = "177013003";
+const char *ssid = "personalX"; // SSID / Nama WiFi
+const char *password = "177013003"; // Password WiFi
 
 const int ledPin = 4; // LED indikator status koneksi
 
@@ -38,17 +38,18 @@ void setup()
 
     // Set mode WiFi menjadi Station
     WiFi.mode(WIFI_STA);
-    WiFi.begin(ssid, password);
-    WiFi.hostname("Test");
+    WiFi.begin(ssid, password); // Memulai WiFi STA yang akan terhubung sesuai dengan ssid dan password
+    WiFi.setHostname("Test"); // Mengubah nama perangkat WiFi ESP saat terhubung ke hotspot
 
     Serial.print("Menghubungkan ke WiFi");
-    while (WiFi.status() != WL_CONNECTED)
-    {
+    while (WiFi.status() != WL_CONNECTED) // Mengecek status WiFi, apakah masih konekting atau sudah konek
+    { // Jika konekting, akan menampilkan '.'
         delay(500);
         Serial.print(".");
     }
 
     // Jika berhasil terhubung
+    // Menampilkan IP addr, MAC addr, RSSI
     Serial.println();
     Serial.println("WiFi berhasil terhubung!");
     Serial.print("IP Address  : ");
@@ -64,8 +65,8 @@ void setup()
 void loop()
 {
     // Cek status koneksi setiap 5 detik
-    if (WiFi.status() == WL_CONNECTED)
-    {
+    if (WiFi.status() == WL_CONNECTED) // Mengecek status WiFI saat ini
+    { // Jika masih terhubung, tampilkan IP addr, MAC addr dan RSSI
         Serial.println("\nStatus: Terhubung");
 
         // Mengecek status WiFi saat loop
@@ -77,11 +78,11 @@ void loop()
         Serial.println(WiFi.RSSI());
     }
     else
-    {
+    { // Jika tidak, tampilkan status terputus dan mematikan LED
         Serial.println("Status: Terputus");
         digitalWrite(ledPin, LOW);
     }
-    delay(5000);
+    delay(5000); // Jeda 5 detik
 }
 ```
 
@@ -92,17 +93,19 @@ void loop()
 ```cpp
 #include <ESP8266WiFi.h>
 
-const char *ap_ssid = "ESP32_AccessPointc";
-const char *ap_password = "12345678"; // minimal 8 karakter
+const char *ap_ssid = "ESP32_AccessPointc"; // Nama Access Point ESP
+const char *ap_password = "12345678"; // minimal 8 karakter, password Access Point ESP
 
 void setup()
 {
     Serial.begin(115200);
 
     // Set mode WiFi menjadi Access Point
+    // Mengatur SSID dan password AP
     WiFi.mode(WIFI_AP);
     WiFi.softAP(ap_ssid, ap_password);
 
+    // Menampilkan SSID dan IP addr dari Access Point
     IPAddress apIP = WiFi.softAPIP();
     Serial.println("Access Point aktif!");
     Serial.print("SSID          : ");
