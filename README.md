@@ -20,7 +20,14 @@ Root
 | | └ ... (Foto / Video dokumentasi)
 | └ README.md
 |
-└ Pertemuan 2-Konfigurasi Jaringan
+├ Pertemuan 2-Konfigurasi Jaringan
+| ├ Code/
+| | └ ... (Source code, asli dan pertanyaan)
+| ├ Dokumentasi/
+| | └ ... (Foto / Video dokumentasi)
+| └ README.md
+|
+└ Pertemuan 3-Protokol Komunikasi IoT
   ├ Code/
   | └ ... (Source code, asli dan pertanyaan)
   ├ Dokumentasi/
