@@ -27,7 +27,21 @@ Root
 | | └ ... (Foto / Video dokumentasi)
 | └ README.md
 |
-└ Pertemuan 3-Protokol Komunikasi IoT
+├ Pertemuan 3-Protokol Komunikasi IoT
+| ├ Code/
+| | └ ... (Source code, asli dan pertanyaan)
+| ├ Dokumentasi/
+| | └ ... (Foto / Video dokumentasi)
+| └ README.md
+|
+├ Pertemuan 4-Komunikasi Pertukaran Data
+| ├ Code/
+| | └ ... (Source code, asli dan pertanyaan)
+| ├ Dokumentasi/
+| | └ ... (Foto / Video dokumentasi)
+| └ README.md
+|
+└ Pertemuan 5-Pengolahan dan Analisis Data
   ├ Code/
   | └ ... (Source code, asli dan pertanyaan)
   ├ Dokumentasi/
