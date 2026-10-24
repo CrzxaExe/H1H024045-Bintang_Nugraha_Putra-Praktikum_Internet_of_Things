@@ -523,6 +523,10 @@ plt.savefig("grafik_suhu.png")
 plt.show()
 ```
 
+**Output**
+
+![Grafik Suhu](./Dokumentasi/grafik_suhu.png)
+
 **Penjelasan**
 
 1. Menentukan ukuran jendela
